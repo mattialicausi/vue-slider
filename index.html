@@ -29,8 +29,8 @@
                     <div class="next" @click="nextButton()" ></div>
                     <div class="thumb active">
                         <img v-for="(v, indice) in slides" :key="indice" 
-                        :src="slides[activeIndex].image" alt="Immagine film '+ activeIndex"
-                      
+                        :src="slides[indice].image" alt="Immagine film '+ activeIndex"
+                        :class = "indice == activeIndex ? 'thumb active' : '' "
                         />
                     </div>
                    
@@ -46,4 +46,4 @@
 </html>
 
 
-  <!-- :class = "indice === activeIndex ? 'active" : '' " codice per evidenziare card corrente -->
+ 
