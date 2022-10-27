@@ -83,6 +83,5 @@ const app = createApp({
         this.autoScroll();
     }
 
-
 });
 app.mount('#app');
