@@ -58,9 +58,20 @@ const app = createApp({
             if(this.activeIndex > 4){
                 this.activeIndex = 0;
             }
-        }
+        },
+        autoScroll(){
+            this.scroll = setInterval(()=> {
+                this.nextButton();
+            }, 2000)
+        },
+        scrollStop(){
+            clearInterval(this.scroll);
 
+        }
         
+    },
+    mounted(){
+        this.autoScroll();
     }
 
 

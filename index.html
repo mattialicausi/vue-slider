@@ -16,7 +16,7 @@
         <div class="container" >
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item">
+                <div class="item" @mouseover="scrollStop" @mouseleave= "autoScroll">
                     <img :src="slides[activeIndex].image" :alt="'Immagine film '+ activeIndex" />
                     <div class="text">
                         <h3>{{slides[activeIndex].title}}</h3>
@@ -30,7 +30,7 @@
                     <div class="thumb active">
                         <img v-for="(v, indice) in slides" :key="indice" 
                         :src="slides[indice].image" alt="Immagine film '+ activeIndex"
-                        :class = "indice == activeIndex ? 'thumb active' : '' "
+                        :class = "indice == activeIndex ? 'thumb active' : ''  "
                         />
                     </div>
                    
