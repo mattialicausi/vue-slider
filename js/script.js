@@ -53,23 +53,32 @@ const app = createApp({
             }
 
         },
+
         nextButton(){
             this.activeIndex++
             if(this.activeIndex > 4){
                 this.activeIndex = 0;
             }
         },
+
         autoScroll(){
             this.scroll = setInterval(()=> {
                 this.nextButton();
             }, 2000)
         },
+
         scrollStop(){
             clearInterval(this.scroll);
 
+        },
+
+        selezionaImg(){
+            // funzione per selezionare img corrente dal thumbs
+
         }
-        
+
     },
+
     mounted(){
         this.autoScroll();
     }
