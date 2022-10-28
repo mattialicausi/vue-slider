@@ -7,17 +7,16 @@
     <title>Slider</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
 </head>
 <body>
 
     <div id="app">
 
-        <div class="container" >
+        <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item" @mouseover="scrollStop" @mouseleave= "autoScroll">
-                    <img :src="slides[activeIndex].image" :alt="'Immagine film '+ activeIndex" />
+                <div class="item" @mouseover= "scrollStop" @mouseleave= "autoScroll">
+                    <img :src= "slides[activeIndex].image" :alt= "'Immagine film '+ activeIndex" />
                     <div class="text">
                         <h3>{{slides[activeIndex].title}}</h3>
                         <p>{{slides[activeIndex].text}}</p>
@@ -25,13 +24,14 @@
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev" @click="prevButton()" ></div>
-                    <div class="next" @click="nextButton()" ></div>
+                    <div class="prev" @click= "prevButton()"></div>
+                    <div class="next" @click= "nextButton()"></div>
                     <div class="thumb active">
-                        <img v-for="(v, indice) in slides" :key="indice" 
-                        :src="slides[indice].image" alt="Immagine film '+ activeIndex"
+                        <img v-for= "(v, indice) in slides" :key= "indice" 
+                        :src= "slides[indice].image" alt= "Immagine film '+ activeIndex"
                         :class = "indice == activeIndex ? 'thumb active' : '' "
-                        />
+                        @click = "selezionaImg(indice)" />
+                        
                     </div>
                    
                 </div>
